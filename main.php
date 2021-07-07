@@ -1,11 +1,7 @@
 <?php
+require_once __DIR__ . DIRECTORY_SEPARATOR . 'init.php';
 
-use SIKessEm\Organizer\SystemInterface as System;
-
-function main(System $sys) {
-    $settings = $sys->import('cfg.program');
-    extract($settings);
-    $content = $sys->save('doc.home', $settings);
-    echo $content;
-    exit;
-}
+return function () {
+  require __DIR__ . '/doc/home.php';
+  exit;
+};
