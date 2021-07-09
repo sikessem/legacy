@@ -19,7 +19,7 @@ $app_author = $app_name.' ('. $app_owner . ')';
     <link rel="icon" type="image/x-icon" href="favicon.ico"/>
     <link rel="stylesheet" href="visual.css" type="text/css"/>
   </head>
-  <body class="view" onLoad="boot();">
+  <body class="view" onLoad="main();">
     <noscript>Javascript is required at <?= $app_name ?>. Please activate it to continue.</noscript>
     <div id="MainWrapper">
       <div class="main layout">
