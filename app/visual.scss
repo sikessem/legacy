@@ -60,4 +60,17 @@ $small-font : Helvetica, Arial, sans-serif;
   .inline.table {
     display: inline-table;
   }
+
+  .block.centered {
+    margin: auto;
+  }
+
+  .text.centered {
+    text-align: center;
+  }
+
+  .box.centered {
+    justify-content: center;
+    align-items: center;
+  }
 }
