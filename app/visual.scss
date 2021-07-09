@@ -24,4 +24,40 @@ $small-font : Helvetica, Arial, sans-serif;
   .text {
     font: 1rem $small-font;
   }
+
+  .layout {
+    display: grid;
+  }
+
+  .box {
+    display: flex;
+  }
+
+  .block {
+    display: block;
+  }
+
+  .table {
+    display: table;
+  }
+
+  .inline {
+    display: inline;
+  }
+
+  .inline.layout {
+    display: inline-grid;
+  }
+
+  .inline.box {
+    display: inline-flex;
+  }
+
+  .inline.block {
+    display: inline-block;
+  }
+
+  .inline.table {
+    display: inline-table;
+  }
 }
