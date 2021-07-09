@@ -17,7 +17,7 @@ $app_author = $app_name.' ('. $app_owner . ')';
     <link rel="alternate icon" type="image/png" href="favicon.png"/>
     <link rel="shortcut icon" type="image/png" href="favicon.png"/>
     <link rel="icon" type="image/x-icon" href="favicon.ico"/>
-    <link rel="stylesheet" href="visual.css" type="text/css"/>
+    <link rel="stylesheet" href="boot.css" type="text/css"/>
   </head>
   <body class="view" onLoad="main();">
     <noscript>Javascript is required at <?= $app_name ?>. Please activate it to continue.</noscript>
@@ -59,6 +59,6 @@ $app_author = $app_name.' ('. $app_owner . ')';
         </div>
       </div>
     </div>
-    <script type="application/javascript" src="responsive.js" language="javascript"></script>
+    <script type="application/javascript" src="boot.js" language="javascript"></script>
   </body>
 </html>
