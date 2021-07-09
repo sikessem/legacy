@@ -4,7 +4,7 @@ $app_owner = 'SIGUI Kessé Emmanuel';
 $app_author = $app_name.' ('. $app_owner . ')';
 ?>
 <!DOCTYPE html>
-<html lang="en" id="ske" class="nojs doc">
+<html lang="en" id="ske" class="no-js doc">
   <head>
     <meta charset="UTF-8"/>
     <base href="/"/>
@@ -19,7 +19,7 @@ $app_author = $app_name.' ('. $app_owner . ')';
     <link rel="icon" type="image/x-icon" href="favicon.ico"/>
     <link rel="stylesheet" href="visual.css" type="text/css"/>
   </head>
-  <body>
+  <body class="view" onLoad="boot();">
     <noscript>Javascript is required at <?= $app_name ?>. Please activate it to continue.</noscript>
     <div id="MainWrapper">
       <div class="main layout">
@@ -59,6 +59,6 @@ $app_author = $app_name.' ('. $app_owner . ')';
         </div>
       </div>
     </div>
-    <script type="applcation/javascript" src="responsive.js" language="javascript"></script>
+    <script type="application/javascript" src="responsive.js" language="javascript"></script>
   </body>
 </html>
