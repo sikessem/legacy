@@ -1,0 +1,27 @@
+$long-font : system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Droid Sans', 'Helvetica Neue', Arial, sans-serif;
+$small-font : Helvetica, Arial, sans-serif;
+
+#ske.doc {
+  *::before,
+  *,
+  *::after {
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+    border: none;
+    outline: none;
+    color: inherit;
+    text-decoration: none;
+    background-color: transparent;
+  }
+
+  html, body {
+    width: 100%;
+    height: 100%;
+    font-family: $long-font;
+  }
+
+  .text {
+    font: 1rem $small-font;
+  }
+}
