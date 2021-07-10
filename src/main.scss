@@ -2,10 +2,97 @@
 
 #ske.doc {
   &.js.doc .view #MainWrapper {
-    background-color: #787800;
     background-image: linear-gradient(#ff7800 0%, #00ff78 100%);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+  }
+
+  .main {
+    width: calc(100% - 20px);
+    margin: 48px auto;
+    max-width: max(300px, 100vmin);
+    background-color: #fff;
+    color: #000;
+    border-radius: 8px;
+    padding: 12px;
+    border: 1px solid #CDCD9A;
+    box-shadow: -2px -2px 8px #9A9A78,
+                4px 4px 16px #9A9A78;
+    overflow: auto;
+    word-wrap: break-word;
+  }
+
+  .main.content > .heading {
+    margin: 30px auto 20px;
+  }
+
+  .main.content > .heading .logo {
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: bold;
+    content: url("https://sikessem.com/logo.svg");
+    height: 30px;
+  }
+
+  .main.content > .footing {
+    padding-top: 8px;
+    border-top: 1px solid #787878;
+    margin: 36px auto 4px;
+  }
+
+  .button.light {
+    background-color: #00bebe;
+    color: #fff;
+    border-color: #007f7f;
+  }
+
+  .button.dark {
+    border-color: #beffff;
+    background-color: #006060;
+    color: #beffff;
+  }
+
+  .button.light:hover {
+    background-color: #007f7f;
+  }
+
+  .button.dark:hover {
+    background-color: #004040;
+    color: #fff;
+  }
+
+  .button.light:active {
+    background-color: #007878;
+  }
+
+  .button.dark:active {
+    background-color: #005050;
+    color: #fff;
+  }
+
+  .button.light:focus {
+    background-color: #005050;
+  }
+
+  .button.dark:focus {
+    background-color: #002020;
+    color: #fff;
+  }
+
+  .link {
+    color: #0078ff;
+  }
+
+  .link:hover {
+    color: #0012ff;
+  }
+
+  .link:active {
+    color: #0034ff;
+  }
+
+  .link:focus {
+    color: #001278;
   }
 }
