@@ -1,6 +1,10 @@
 function main(): void {
-  load_script('main')
-  load_style('main')
+  load('main')
+}
+
+function load(name: string) {
+  load_style(name)
+  load_script(name)
 }
 
 function load_script(name: string): void {
