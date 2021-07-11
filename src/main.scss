@@ -11,7 +11,7 @@
   .main {
     width: calc(100% - 20px);
     margin: 48px auto;
-    max-width: max(300px, 100vmin);
+    max-width: clamp(300px, 50rem, 100vw);
     background-color: #fff;
     color: #000;
     border-radius: 8px;

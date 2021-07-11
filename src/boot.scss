@@ -44,7 +44,7 @@
     display: inline-grid;
   }
 
-  .inline:is(.box,.list) {
+  .inline.box {
     display: inline-flex;
   }
 
@@ -81,54 +81,54 @@
     justify-content: space-evenly;
   }
 
-  .v:is(.box,.list) {
+  .v.box {
     flex-direction: column;
   }
 
-  .vr:is(.box,.list) {
+  .vr.box {
     flex-direction: column-reverse;
   }
 
-  .h:is(.box,.list) {
+  .h.box {
     flex-direction: row;
   }
 
-  .hr:is(.box,.list) {
+  .hr.box {
     flex-direction: row-reverse;
   }
 
-  .w:is(.box,.list) {
+  .w.box {
     flex-wrap: wrap;
   }
 
-  .wr:is(.box,.list) {
+  .wr.box {
     flex-wrap: wrap-reverse;
   }
 
-  .nw:is(.box,.list) {
+  .nw.box {
     flex-wrap: nowrap;
   }
 
-  .fvr:is(.box,.list) {
+  .fvr.box {
     flex-flow: column-reverse wrap-reverse;
   }
 
-  .vwr:is(.box,.list) {
+  .vwr.box {
     flex-flow: column wrap-reverse;
   }
 
-  .fhr:is(.box,.list) {
+  .fhr.box {
     flex-flow: row-reverse wrap-reverse;
   }
 
-  .hwr:is(.box,.list) {
+  .hwr.box {
     flex-flow: row wrap-reverse;
   }
 
   .subtitle {
     font-weight: 500;
     font-size: 1.2rem;
-    margin: 22px;
+    margin: 22px auto;
     line-height: 1.4;
   }
 
@@ -143,6 +143,7 @@
   }
 
   .button {
+    margin: 8px;
     padding: 12px 16px;
     font-size: 1rem;
     display: inline-block;
