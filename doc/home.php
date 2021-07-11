@@ -31,7 +31,7 @@ $app_author = $app_name.' ('. $app_owner . ')';
         <div class="container">
           <main class="home">
             <div class="heading">
-              <h1>Get your application cheaply and on time</h1>
+              <h1>Get your appliance cheaply and on time</h1>
             </div>
             <div class="content">
               <div class="subtitle">
