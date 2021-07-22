@@ -4,10 +4,11 @@
     "description": "The official SIKessEm website",
     "license": "GPL-3.0-only",
     "keywords": [
-        "website",
-        "sikessem"
+        "sikessem",
+        "website"
     ],
     "authors": [{
+        "homepage": "https://sikessem.com",
         "name": "SIGUI kessé Emmanuel",
         "email": "sikessem@omninf.com",
         "role": "Developer"
@@ -17,17 +18,15 @@
         "issues": "https://github.com/SIKessEm/SIKessEm.com/issues"
     },
     "require": {
-        "php": ">=8.0",
-        "sikessem/organizer": "dev-main",
-        "sikessem/html": "dev-main"
+        "php": ">=8.0"
     },
     "autoload": {
         "psr-4": {
           "App\\": "lib/"
         }
     },
+    "homepage": "https://github.com/SIKessEm/SIKessEm.com#readme",
     "config": {
-        "vendor-dir": "pkg",
         "preferred-install": "dist",
         "sort-packages": true
     },
