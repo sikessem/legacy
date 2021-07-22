@@ -7,7 +7,7 @@ return function (array $args) {
       if(in_array($_SERVER['REQUEST_METHOD'], ['GET', 'POST'], true)) {
         if(in_array(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), ['/', ''])) {
           http_response_code(200);
-          require __DIR__ . '/doc/home.php';
+          require __DIR__ . '/src/cgi/home.php';
           exit;
         } else http_response_code(404);
       } else http_response_code(405);
