@@ -1,0 +1,23 @@
+{
+    "name": "@~sikessem/website",
+    "version": "1.0.0",
+    "description": "The official SIKessEm website",
+    "main": "client/index.js",
+    "scripts": {
+        "serve": "php -S sikessem.test:80 web.php"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/SIKessEm/SIKessEm.com.git"
+    },
+    "keywords": [
+        "sikessem",
+        "website"
+    ],
+    "author": "SIGUI Kessé Emmanuel <sikessem@omninf.com> (https://sikessem.com)",
+    "license": "GPL-3.0-only",
+    "bugs": {
+        "url": "https://github.com/SIKessEm/SIKessEm.com/issues"
+    },
+    "homepage": "https://github.com/SIKessEm/SIKessEm.com#readme"
+}
