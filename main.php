@@ -13,7 +13,7 @@ return function (array $args) {
       } else http_response_code(405);
     } else http_response_code(400);
   } else {
-    header("Location: $server_scheme://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}", true, 301);
+    header("Location: $app_scheme://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}", true, 301);
     exit;
   }
 };
