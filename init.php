@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/pkg/autoload.php';
+require_once __DIR__ . '/vendor/autoload.php';
 
 return (function(){
 $opts = (array) @include __DIR__ . '/cfg/program.php';
