@@ -5,8 +5,8 @@
     <base href="/"/>
     <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <title><?= $app_author ?></title>
-    <meta name="description" content="<?= $app_author ?> develops full-time cross-platform programs and releases them using Git. <?= $app_name ?> repositories are available on Github. Discover them on its website."/>
+    <title><?= $doc_title ?></title>
+    <meta name="description" content="<?= $doc_description ?>"/>
     <link rel="fluid-icon" href="icon.png" title="<?= $app_name ?>"/>
     <link rel="mask-icon" href="logo.svg"/>
     <link rel="alternate icon" type="image/png" href="favicon.png"/>
