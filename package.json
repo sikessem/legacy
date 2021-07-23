@@ -5,7 +5,7 @@
     "main": "client/index.js",
     "scripts": {
         "serve": "php -S sikessem.test:80 web.php",
-        "watch": "sass -w ./server/res/assets/:./client"
+        "watch": "sass -w ./server/res/assets/:./client -s compressed --no-source-map"
     },
     "repository": {
         "type": "git",
