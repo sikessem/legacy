@@ -4,7 +4,8 @@
     "description": "The official SIKessEm website",
     "main": "client/index.js",
     "scripts": {
-        "serve": "php -S sikessem.test:80 web.php"
+        "serve": "php -S sikessem.test:80 web.php",
+        "watch": "sass -w ./server/res/assets/:./client"
     },
     "repository": {
         "type": "git",
