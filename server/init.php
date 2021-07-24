@@ -1,9 +1,14 @@
 <?php
+
 define('ROOT_DIR', dirname(__DIR__) . DIRECTORY_SEPARATOR);
 
 define('CLIENT_DIR', ROOT_DIR . 'client' . DIRECTORY_SEPARATOR);
 
 define('SERVER_DIR', ROOT_DIR . 'server' . DIRECTORY_SEPARATOR);
+
+define('VALUE_PATTERN', '/\<\?\s*(.+?)\s*\?\>/');
+
+require_once ROOT_DIR . 'vendor/autoload.php';
 
 /**
  * Get the path of a template
@@ -35,25 +40,49 @@ function widget(string $name) {
   return tpl('widgets' . DIRECTORY_SEPARATOR . $name);
 }
 
-require_once ROOT_DIR . 'vendor/autoload.php';
+function parse_values_file(string $file): array {
+  if(!is_file($file)) trigger_error('No such file ' . $file);
+  $settings = (array) @include $file;
+  return parse_values($settings);
+}
 
-return (function(){
-$opts = (array) @include __DIR__ . '/cfg/program.php';
-foreach($opts as $opt_id => &$opt_val) {
-  if(preg_match_all('/\<\?\s*(.+?)\s*\?\>/', $opt_val, $opt_matches)) {
-    foreach($opt_matches[1] as $opt_match_key => $opt_match_val) {
-      if(isset($opts[$opt_match_val])) {
-        $opt_val_replace = $opts[$opt_match_val];
-      } elseif(isset($GLOBALS[$opt_match_val])) {
-        $opt_val_replace = $GLOBALS[$opt_match_val];
-      } elseif (defined($opt_match_val)) {
-        $opt_val_replace = constant($opt_match_val);
-      } else {
-        $opt_val_replace = $opt_matches[0][$opt_match_key];
-      }
-      $opt_val = str_replace($opt_matches[0][$opt_match_key], $opt_val_replace, $opt_val);
+function parse_values(array $values): array {
+  $count = count($values);
+  foreach($values as $key => &$value) {
+    $offset = 0;
+    while($offset < $count && match_value($value)) {
+      $value = parse_value($value, $values);
+      $offset++;
+    }
+    if($offset === $count) trigger_error("Bad value set on $key (It defines itself)");
+  }
+  return $values;
+}
+
+function match_value(string $value): bool {
+  return (bool) preg_match(VALUE_PATTERN, $value);
+}
+
+function parse_value(string $value, array $values): string {
+  if(preg_match_all(VALUE_PATTERN, $value, $matches)) {
+    foreach($matches[1] as $match_key => $match_value) {
+      if(isset($values[$match_value]))
+        $value_replace = $values[$match_value];
+      elseif(isset($values[$match_value]))
+        $value_replace = $values[$match_value];
+      elseif(isset($GLOBALS[$match_value]))
+        $value_replace = $GLOBALS[$match_value];
+      elseif (defined($match_value))
+        $value_replace = constant($match_value);
+      else
+        $value_replace = $matches[0][$match_key];
+      $value = str_replace($matches[0][$match_key], $value_replace, $value);
     }
   }
+  return $value;
 }
-return $opts;
+
+return (function(){
+  $options = parse_values_file(__DIR__ . '/cfg/program.php');
+  return $options;
 })();
