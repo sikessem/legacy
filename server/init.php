@@ -11,13 +11,23 @@ define('VALUE_PATTERN', '/\<\?\s*(.+?)\s*\?\>/');
 require_once ROOT_DIR . 'vendor/autoload.php';
 
 /**
- * Get the path of a template
+ * Get the path of a source file
  *
  * @param  string $name The template name
  * @return string       The template path
  */
-function tpl(string $name): string {
-  return SERVER_DIR . 'tpl' . DIRECTORY_SEPARATOR . $name . '.php';
+function src(string $name): string {
+  return SERVER_DIR . 'src' . DIRECTORY_SEPARATOR . $name . '.php';
+}
+
+/**
+ * Get the path of a GUI file
+ *
+ * @param  string $name The template name
+ * @return string       The template path
+ */
+function gui(string $name): string {
+  return src('gui' . DIRECTORY_SEPARATOR . $name);
 }
 
 /**
@@ -27,7 +37,7 @@ function tpl(string $name): string {
  * @return string       The layout path
  */
 function layout(string $name) {
-  return tpl('layouts' . DIRECTORY_SEPARATOR . $name);
+  return gui('layouts' . DIRECTORY_SEPARATOR . $name);
 }
 
 /**
@@ -37,7 +47,7 @@ function layout(string $name) {
  * @return string       The widget path
  */
 function widget(string $name) {
-  return tpl('widgets' . DIRECTORY_SEPARATOR . $name);
+  return gui('widgets' . DIRECTORY_SEPARATOR . $name);
 }
 
 function parse_values_file(string $file): array {

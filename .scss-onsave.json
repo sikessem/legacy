@@ -1,5 +1,5 @@
 {
-	"inputDir": "server/res/assets/designs/",
+	"inputDir": "server/src/gui/designs/",
 	"outputDir": "client/",
 	"useNpmSass": true,
 	"style":"compressed",
