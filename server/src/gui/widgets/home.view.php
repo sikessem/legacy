@@ -8,8 +8,8 @@
     </div>
     <div class="items">
       <ul class="buttons list w box centered sa">
-        <li class="item"><a href="https://omninf.com/SIKessEm/profile/" class="button dark" title="All about <?= $app_owner?>">All about <?= $app_name?></a></li>
-        <li class="item"><a href="https://omninf.com/SIKessEm/contact/" class="button light" title="Contact <?= $app_owner?>">Contact <?= $app_name?></a></li>
+        <li class="item"><a href="https://omninf.com/SIKessEm/profile/" class="button dark" title="All about <?= $author_fullname?>">All about <?= $app_name?></a></li>
+        <li class="item"><a href="https://omninf.com/SIKessEm/contact/" class="button light" title="Contact <?= $author_fullname?>">Contact <?= $app_name?></a></li>
       </ul>
     </div>
   </div>
