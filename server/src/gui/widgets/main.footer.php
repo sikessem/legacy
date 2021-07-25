@@ -1,4 +1,5 @@
 <footer class="footer">
+  <p class="content centered"><a href="home"><img src="icon.png" alt="icon" width="48px" height="48px" style="padding:4px;border-radius:50%;object-fit:cover;"/></a></p>
   <nav class="items">
     <dl class="list row">
       <div class="column">
