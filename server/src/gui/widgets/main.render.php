@@ -16,7 +16,7 @@
   </head>
   <body class="view" onLoad="main();">
     <noscript>Javascript is required at <?= $app_name ?>. Please activate it to continue.</noscript>
-    <div id="MainWrapper" class="box centered">
+    <div id="MainWrapper">
       <div class="main content centered">
         <div class="main-header"><?php require 'main.header.php' ?></div>
         <div class="main-view box centered"><?= $view ?></div>
