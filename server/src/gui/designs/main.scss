@@ -45,17 +45,50 @@
   }
 
   .main-footer {
-    background-color: #000;
+    background-color: #120023;
     color: #fff;
     padding: 12px 8px 0;
     border-top: 1px solid #787878;
     min-height: calc(100vh - 100vmin);
-  }
+    position: relative;
 
-  .copyright {
-    padding: 10px 0;
-    font-size: 0.725rem;
-    border-top: 1px solid #787878;
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 50%;
+      height: 25%;
+      background-color: inherit;
+      top: -12.5%;
+      border-radius: 50%;
+    }
+
+    &::before {
+      left: 0;
+    }
+
+    &::after {
+      right: 0;
+    }
+
+    .content:first-of-type {
+      top: -44px;
+      z-index: 999999999999;
+      position: absolute;
+      left: 0;
+      right: 0;
+    }
+
+    nav.items {
+      position: sticky;
+      z-index: 999999999999;
+    }
+
+    .copyright {
+      padding: 10px 0;
+      font-size: 0.725rem;
+      border-top: 1px solid #787878;
+    }
   }
 
   .button.light {
