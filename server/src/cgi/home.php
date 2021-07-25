@@ -7,14 +7,6 @@ require widget('home.view');
 $view = ob_get_clean();
 
 ob_start();
-require widget('main.header');
-$main_header = ob_get_clean();
-
-ob_start();
-require widget('main.footer');
-$main_footer = ob_get_clean();
-
-ob_start();
 require widget('main.render');
 $render = ob_get_clean();
 exit($render);

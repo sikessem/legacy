@@ -18,9 +18,9 @@
     <noscript>Javascript is required at <?= $app_name ?>. Please activate it to continue.</noscript>
     <div id="MainWrapper" class="box centered">
       <div class="main content centered">
-        <div class="main-header"><?= $main_header ?></div>
+        <div class="main-header"><?php require 'main.header.php' ?></div>
         <div class="main-view box centered"><?= $view ?></div>
-        <div class="main-footer"><?= $main_footer ?></div>
+        <div class="main-footer"><?php require 'main.footer.php' ?></div>
       </div>
     </div>
     <script type="application/javascript" src="boot.js" language="javascript"></script>
