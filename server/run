@@ -1,4 +1,17 @@
 #!/usr/bin/php
 <?php
-echo 'Welcome to the SIKessEm CLI App !';
+use Start\{
+  Core, Settings
+};
+
+require __DIR__ . '/init.php';
+
+$core = new Core(ROOT_DIR);
+
+$settings = new Settings((array) @require $core->path('server/cfg/program.php'));
+
+echo 'Welcome to '. $settings->app_name .' CLI !' . PHP_EOL;
+
+echo 'Code executed in '. $core->time() . 'ms';
+
 exit;
