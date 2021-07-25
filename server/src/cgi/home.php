@@ -15,6 +15,6 @@ require widget('main.footer');
 $main_footer = ob_get_clean();
 
 ob_start();
-require layout('main.render');
+require widget('main.render');
 $render = ob_get_clean();
 exit($render);
