@@ -1,17 +1,12 @@
 #!/usr/bin/php
 <?php
-use Start\{
-  Core, Settings
-};
+use Start\Core;
 
 require __DIR__ . '/init.php';
 
-$core = new Core(ROOT_DIR);
+$options = (array) @require __DIR__ . '/cfg/program.php';
+$core = new Core(ROOT_DIR, $options);
 
-$settings = new Settings((array) @require $core->path('server/cfg/program.php'));
-
-echo 'Welcome to '. $settings->app_name .' CLI !' . PHP_EOL;
-
+echo 'Welcome to '. $core->app_name .' CLI !' . PHP_EOL;
 echo 'Code executed in '. $core->time() . 'ms';
-
 exit;

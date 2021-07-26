@@ -1,21 +1,28 @@
 <?php namespace Start;
 
-class Core {
-  public function __construct(string $root) {
+class Core extends Settings {
+
+  /**
+   * @param string $root The root directory of the program
+   * @param array $settings The program settings
+   */
+  public function __construct(string $root, array $options) {
     if(empty($root))
       throw new \InvalidArgumentException('Empty root given');
 
     if(in_array($root, ['.', '..']) || preg_match('/^\.{1,2}(\/|\\\\)/U', $root))
       throw new \InvalidArgumentException('Give an absolute path');
 
+    if(!is_dir($root) || !is_readable($root))
+      throw new \RuntimeException("Cannot use $root as the program folder (it is not a directory or it is unreadable)");
+
     if(!is_dir($root))
       throw new \InvalidArgumentException("No such directory $root");
 
-    $this->root = realpath($root) . DIRECTORY_SEPARATOR;
+    $options['root'] = $this->root = realpath($root) . DIRECTORY_SEPARATOR;
+    parent::__construct($options);
     $this->time = hrtime(true);
   }
-
-  protected string $root;
 
   function path(string $name): string {
     if(file_exists($path = $this->root . $name)) {
@@ -36,10 +43,5 @@ class Core {
    */
   public function time(): float {
     return (hrtime(true) - $this->time)/1e+6;
-  }
-
-  public function __get(string $name): mixed {
-    if(property_exists($this, $name))
-      return $this->$name;
   }
 }
