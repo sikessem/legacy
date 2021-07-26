@@ -48,8 +48,12 @@ class Server extends WebServer {
    */
   public function serve(string $method, string $action): void {
     $method = $this->sanitizeMethod($method);
-    if(!empty($services = $this->menu[$method]))
-      foreach($services as $action => $service)
-        //...
+    if(!isset($this->menu[$method]))
+      throw new Error("No method matches $method", Error::BAD_METHOD);
+
+    foreach($services as $action => $service)
+      if($service->match($action))
+        return $service->process();
+    throw new Error("No actions matches $action", Error::NO_ACTION);
   }
 }

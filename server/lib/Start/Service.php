@@ -18,4 +18,8 @@ abstract class Service {
   public function callback(): callable {
     return $this->callback;
   }
+
+  abstract public function match(string $pattern): bool;
+
+  abstract public function process(): mixed;
 }
