@@ -6,26 +6,26 @@ class Server extends WebServer {
 
   protected array $menu = [];
 
-  public function onGet(string $action, callable $service): self {
-    return $this->request('GET', $action);
+  public function onGet(string $action, callable $service, ?string $alias = null): Service {
+    return $this->request('GET', $action, $alias);
   }
 
-  public function onPost(string $action, callable $service): self {
-    return $this->request('POST', $action);
+  public function onPost(string $action, callable $service, ?string $alias = null): Service {
+    return $this->request('POST', $action, $alias);
   }
 
   /**
-   * On request server
-   *
-   * @param  string   $method  The request method
-   * @param  string   $action  The request action
-   * @param  callable $service The request service
-   * @return self
+   * @param  string      $method   The request method
+   * @param  string      $action   The request action
+   * @param  callable    $callback The request callback
+   * @param  string|null $alias    The request alias
+   * @return Service
    */
-  public function onRequest(string $method, string $action, callable $service): self {
+  public function onRequest(string $method, string $action, callable $callback, ?string $alias = null): Service {
     $method = $this->sanitizeMethod($method);
-    $this->menu[$method][$action] = $service;
-    return $this;
+    if(!isset($alias))
+      $alias = $action;
+    return $this->menu[$method][$action] = new Service($action, $alias, $callback);
   }
 
   protected function sanitizeMethod(string $method): string {
