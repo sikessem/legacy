@@ -6,26 +6,26 @@ class Server extends WebServer {
 
   protected array $menu = [];
 
-  public function onGet(string $action, callable $service, ?string $alias = null): Service {
-    return $this->request('GET', $action, $alias);
+  public function onGet(string $action, callable $callback, ?string $name = null): Service {
+    return $this->onRequest('GET', $action, $callback, $name);
   }
 
-  public function onPost(string $action, callable $service, ?string $alias = null): Service {
-    return $this->request('POST', $action, $alias);
+  public function onPost(string $action, callable $callback, ?string $name = null): Service {
+    return $this->onRequest('POST', $action, $callback, $name);
   }
 
   /**
    * @param  string      $method   The request method
    * @param  string      $action   The request action
    * @param  callable    $callback The request callback
-   * @param  string|null $alias    The request alias
+   * @param  string|null $name    The request alias
    * @return Service
    */
-  public function onRequest(string $method, string $action, callable $callback, ?string $alias = null): Service {
+  public function onRequest(string $method, string $action, callable $callback, ?string $name = null): Service {
     $method = $this->sanitizeMethod($method);
-    if(!isset($alias))
-      $alias = $action;
-    return $this->menu[$method][$action] = new Service($action, $alias, $callback);
+    if(!isset($name))
+      $name = $action;
+    return $this->menu[$method][] = new Service($action, $name, $callback);
   }
 
   protected function sanitizeMethod(string $method): string {
@@ -51,9 +51,9 @@ class Server extends WebServer {
     if(!isset($this->menu[$method]))
       throw new Error("No method matches $method", Error::BAD_METHOD);
 
-    foreach($services as $action => $service)
+    foreach($this->menu[$method] as $service)
       if($service->match($action))
-        return $service->process();
+        $service->process();
     throw new Error("No actions matches $action", Error::NO_ACTION);
   }
 }
