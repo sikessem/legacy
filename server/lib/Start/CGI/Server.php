@@ -37,30 +37,6 @@ class Server extends GeneralServer {
     return trim($action, '/');
   }
 
-  protected array $menu = [];
-
-  /**
-   * @return array The server menu
-   */
-  public function menu(): array {
-    return $this->menu;
-  }
-
-  protected array $services = [];
-
-  /**
-   * Get a service by name
-   *
-   * @param  string $name The service name
-   * @throws Error        If service not found
-   * @return Service      The service
-   */
-  public function service(string $name): ?Service {
-    if(!isset($this->services[$name]))
-      throw new Error("Undefined service $name", Error::NO_SERVICE);
-    return $this->services[$name] ?? null;
-  }
-
   /**
    * Serve a client request
    *
