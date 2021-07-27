@@ -44,7 +44,7 @@ class Service extends WebService {
   }
 
   public function with(string $key, string $pattern): self {
-    $this->constraints[$key] = $pattern;
+    $this->constraints[$key] = str_replace('(', '(?:', $pattern);
     return $this;
   }
 }
