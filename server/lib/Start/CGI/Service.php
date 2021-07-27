@@ -1,8 +1,8 @@
 <?php namespace Start\CGI;
 
-use \Start\Service as WebService;
+use \Start\Service as GeneralService;
 
-class Service extends WebService {
+class Service extends GeneralService {
 
   public function __construct(string $pattern, string $name, callable $callback) {
     $this->pattern = $pattern;

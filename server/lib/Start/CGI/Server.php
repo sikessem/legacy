@@ -1,8 +1,8 @@
 <?php namespace Start\CGI;
 
-use \Start\Server as WebServer;
+use \Start\Server as GeneralServer;
 
-class Server extends WebServer {
+class Server extends GeneralServer {
 
   public function onGet(string $action, callable $callback, ?string $name = null): Service {
     return $this->onRequest('GET', $action, $callback, $name);
