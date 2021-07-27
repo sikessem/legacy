@@ -1,6 +1,6 @@
-<?php namespace Start\CGI;
+<?php namespace Start\App\CGI;
 
-use \Start\Error as GeneralError;
+use \Start\App\Error as GeneralError;
 
 class Error extends GeneralError {
 

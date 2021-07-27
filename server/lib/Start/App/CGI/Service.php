@@ -1,6 +1,6 @@
-<?php namespace Start\CGI;
+<?php namespace Start\App\CGI;
 
-use \Start\Service as GeneralService;
+use \Start\App\Service as GeneralService;
 
 class Service extends GeneralService {
 

@@ -1,6 +1,6 @@
-<?php namespace Start\CGI;
+<?php namespace Start\App\CGI;
 
-use \Start\Server as GeneralServer;
+use \Start\App\Server as GeneralServer;
 
 class Server extends GeneralServer {
 

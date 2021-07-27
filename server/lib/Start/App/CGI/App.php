@@ -1,6 +1,6 @@
-<?php namespace Start\CGI;
+<?php namespace Start\App\CGI;
 
-use \Start\App as GeneralApp;
+use \Start\App\App as GeneralApp;
 
 class App extends GeneralApp {
   public function __construct() {

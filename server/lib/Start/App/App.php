@@ -1,4 +1,4 @@
-<?php namespace Start;
+<?php namespace Start\App;
 
 abstract class App {
   public function __construct(Server $server) {

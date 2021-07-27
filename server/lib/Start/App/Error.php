@@ -1,4 +1,4 @@
-<?php namespace Start;
+<?php namespace Start\App;
 
 use \Exception;
 
