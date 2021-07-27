@@ -78,8 +78,14 @@ abstract class Service {
   }
 
   public function call(): mixed {
-    $reflect = $this->callbackReflection();
-    return ($this->bindCallback() ?? $this->callback)(...$this->args());
+    $reflection = $this->callbackReflection();
+    $params = $reflection->getParameters();
+    $args = []; $key = 0;
+    $options = [];
+    foreach($params as $param) {
+      $args[] = $this->param($param->name) ?? $this->arg($key) ?? null;
+      $key++;
+    } return ($this->bindCallback() ?? $this->callback)(...$args);
   }
 
   public function with(string $key, string $pattern): self {
