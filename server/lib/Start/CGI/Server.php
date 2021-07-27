@@ -23,6 +23,7 @@ class Server extends WebServer {
    */
   public function onRequest(string $method, string $action, callable $callback, ?string $name = null): Service {
     $method = $this->sanitizeMethod($method);
+    $action = $this->sanitizeAction($action);
     if(!isset($name))
       $name = $action;
     return $this->menu[$method][] = new Service($action, $name, $callback);
@@ -30,6 +31,10 @@ class Server extends WebServer {
 
   protected function sanitizeMethod(string $method): string {
     return strtoupper(trim($method));
+  }
+
+  protected function sanitizeAction(string $action): string {
+    return trim($action, '/');
   }
 
   /**
@@ -48,12 +53,16 @@ class Server extends WebServer {
    */
   public function serve(string $method, string $action): void {
     $method = $this->sanitizeMethod($method);
+    $action = $this->sanitizeAction($action);
+
     if(!isset($this->menu[$method]))
       throw new Error("No method matches $method", Error::BAD_METHOD);
 
-    foreach($this->menu[$method] as $service)
+    foreach($this->menu[$method] as $service) {
       if($service->match($action))
         $service->process();
+    }
+
     throw new Error("No actions matches $action", Error::NO_ACTION);
   }
 }
