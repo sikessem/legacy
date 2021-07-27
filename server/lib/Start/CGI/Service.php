@@ -86,7 +86,7 @@ class Service extends WebService {
   }
 
   public function call(): mixed {
-    return ($this->callback)(...$this->args());
+    return ($this->bindCallback() ?? $this->callback)(...$this->args());
   }
 
   public function with(string $key, string $pattern): self {
