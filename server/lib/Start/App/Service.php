@@ -1,6 +1,6 @@
 <?php namespace Start\App;
 
-use \Closure, \ReflectionFunction, \ReflectionMethod, \ReflectionException, \ValueError;
+use \Closure, \ReflectionFunction, \ReflectionMethod, \ReflectionClass, \ReflectionException, \ValueError, \TypeError;
 
 abstract class Service {
 
@@ -95,9 +95,15 @@ abstract class Service {
 
   protected function bindCallback(): ?Closure {
     if($this->callbackIsBindable()) {
-        return $this->callbackReflection() instanceof ReflectionMethod?
-          $this->callback()->bindTo($reflection->getClosureThis(), $reflection->getClosureScopeClass()):
-          $this->callback()->bindTo($this, $this::class);
+      $reflection = $this->callbackReflection();
+      $callback = $this->callback();
+      try {
+        return $reflection instanceof ReflectionMethod?
+          Closure::bind($callback, $reflection->getClosureThis(), $reflection->getClosureScopeClass()):
+          $callback->bindTo($this, $this::class);
+      } catch(TypeError $e) {
+        return null;
+      }
     } return null;
   }
 
@@ -110,7 +116,11 @@ abstract class Service {
     try {
       return is_array($callback)? new ReflectionMethod($callback[0], $callback[1]): new ReflectionMethod($callback);
     } catch(ReflectionException|ValueError $e) {
-      return new ReflectionFunction($callback);
+      try {
+        return new ReflectionFunction($callback);
+      } catch(TypeError $e) {
+        return (new ReflectionClass($callback))->getMethod('__invoke');
+      }
     }
   }
 }
