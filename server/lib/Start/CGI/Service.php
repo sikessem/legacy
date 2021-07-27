@@ -30,4 +30,11 @@ class Service extends GeneralService {
   protected function matchKey(array $matches) {
     return isset($this->constraints[$matches[1]])? "(?<{$matches[1]}>{$this->constraints[$matches[1]]})": '(?<$1>[^\/]+)';
   }
+
+  public function path(array $options = []): string {
+    $path = $this->pattern;
+    foreach($options as $key => $value)
+      $path = str_replace(":$key", $value, $path);
+    return $path;
+  }
 }
