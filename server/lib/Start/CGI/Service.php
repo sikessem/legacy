@@ -9,7 +9,10 @@ class Service extends WebService {
     parent::__construct($name, $callback);
   }
 
-  protected array $matches = [];
+  protected array $matches = [
+    'arguments' => [],
+    'parameters' => []
+  ];
 
   protected array $constraints = [];
 
@@ -19,7 +22,7 @@ class Service extends WebService {
 
   public function match(string $path): bool {
     $path = trim($path, '/');
-    $pattern = preg_replace('/:([\w]+)/', '(?<$1>[^\/]+)', $this->pattern);
+    $pattern = preg_replace_callback('/:([\w]+)/', [$this, 'matchKey'], $this->pattern);
     $pattern = "/^$pattern$/i";
 
     if(!preg_match($pattern, $path, $matches))
@@ -30,6 +33,10 @@ class Service extends WebService {
       $this->matches[is_int($key)? 'arguments': 'parameters'][$key] = $value;
 
     return true;
+  }
+
+  protected function matchKey(array $matches) {
+    return isset($this->constraints[$matches[1]])? "(?<{$matches[1]}>{$this->constraints[$matches[1]]})": '(?<$1>[^\/]+)';
   }
 
   public function call(): mixed {
