@@ -4,8 +4,6 @@ use \Start\Server as WebServer;
 
 class Server extends WebServer {
 
-  protected array $menu = [];
-
   public function onGet(string $action, callable $callback, ?string $name = null): Service {
     return $this->onRequest('GET', $action, $callback, $name);
   }
@@ -24,9 +22,11 @@ class Server extends WebServer {
   public function onRequest(string $method, string $action, callable $callback, ?string $name = null): Service {
     $method = $this->sanitizeMethod($method);
     $action = $this->sanitizeAction($action);
+
     if(!isset($name))
       $name = $action;
-    return $this->menu[$method][] = new Service($action, $name, $callback);
+
+    return $this->menu[$method][] = $this->services[$name] = new Service($action, $name, $callback);
   }
 
   protected function sanitizeMethod(string $method): string {
@@ -37,6 +37,8 @@ class Server extends WebServer {
     return trim($action, '/');
   }
 
+  protected array $menu = [];
+
   /**
    * @return array The server menu
    */
@@ -44,11 +46,24 @@ class Server extends WebServer {
     return $this->menu;
   }
 
+  protected array $services = [];
+
+  /**
+   * Get a service by name
+   *
+   * @param  string $name The service name
+   * @return Service|null The service or null
+   */
+  public function service(string $name): ?Service {
+    return $this->services[$name] ?? null;
+  }
+
   /**
    * Serve a client request
    *
    * @param  string $method The request method
    * @param  string $action The request action
+   * @throws Error          If undefined method or action
    * @return void
    */
   public function serve(string $method, string $action): void {
@@ -58,11 +73,10 @@ class Server extends WebServer {
     if(!isset($this->menu[$method]))
       throw new Error("No method matches $method", Error::BAD_METHOD);
 
-    foreach($this->menu[$method] as $service) {
+    foreach($this->menu[$method] as $service)
       if($service->match($action))
         $service->call();
-    }
 
-    throw new Error("No actions matches $action", Error::NO_ACTION);
+    throw new Error("No action matches $action", Error::NO_ACTION);
   }
 }
