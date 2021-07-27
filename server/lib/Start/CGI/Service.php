@@ -24,12 +24,13 @@ class Service extends WebService {
       return false;
 
     array_shift($matches);
-    $this->matches = $matches;
+    foreach($matches as $key => $value)
+      $this->matches[is_int($key)? 'arguments': 'parameters'][$key] = $value;
 
     return true;
   }
 
-  public function process(): mixed {
-    return ($this->callback)();
+  public function call(): mixed {
+    return ($this->callback)(...$this->matches['arguments']);
   }
 }

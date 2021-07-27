@@ -21,5 +21,5 @@ abstract class Service {
 
   abstract public function match(string $pattern): bool;
 
-  abstract public function process(): mixed;
+  abstract public function call(): mixed;
 }

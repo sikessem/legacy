@@ -60,7 +60,7 @@ class Server extends WebServer {
 
     foreach($this->menu[$method] as $service) {
       if($service->match($action))
-        $service->process();
+        $service->call();
     }
 
     throw new Error("No actions matches $action", Error::NO_ACTION);
