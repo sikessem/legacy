@@ -52,9 +52,12 @@ class Server extends GeneralServer {
    * Get a service by name
    *
    * @param  string $name The service name
-   * @return Service|null The service or null
+   * @throws Error        If service not found
+   * @return Service      The service
    */
   public function service(string $name): ?Service {
+    if(!isset($this->services[$name]))
+      throw new Error("Undefined service $name", Error::NO_SERVICE);
     return $this->services[$name] ?? null;
   }
 
