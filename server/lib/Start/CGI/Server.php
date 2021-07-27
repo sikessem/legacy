@@ -12,6 +12,58 @@ class Server extends GeneralServer {
     return $this->onRequest('POST', $action, $callback, $name);
   }
 
+  public function onPut(string $action, callable $callback, ?string $name = null): Service {
+    return $this->onRequest('PUT', $action, $callback, $name);
+  }
+
+  public function onPatch(string $action, callable $callback, ?string $name = null): Service {
+    return $this->onRequest('PATCH', $action, $callback, $name);
+  }
+
+  public function onDelete(string $action, callable $callback, ?string $name = null): Service {
+    return $this->onRequest('DELETE', $action, $callback, $name);
+  }
+
+  public function onCopy(string $action, callable $callback, ?string $name = null): Service {
+    return $this->onRequest('COPY', $action, $callback, $name);
+  }
+
+  public function onHead(string $action, callable $callback, ?string $name = null): Service {
+    return $this->onRequest('HEAD', $action, $callback, $name);
+  }
+
+  public function onOptions(string $action, callable $callback, ?string $name = null): Service {
+    return $this->onRequest('OPTIONS', $action, $callback, $name);
+  }
+
+  public function onLink(string $action, callable $callback, ?string $name = null): Service {
+    return $this->onRequest('LINK', $action, $callback, $name);
+  }
+
+  public function onUnlink(string $action, callable $callback, ?string $name = null): Service {
+    return $this->onRequest('UNLINK', $action, $callback, $name);
+  }
+
+  public function onPurge(string $action, callable $callback, ?string $name = null): Service {
+    return $this->onRequest('PURGE', $action, $callback, $name);
+  }
+
+  public function onLock(string $action, callable $callback, ?string $name = null): Service {
+    return $this->onRequest('LOCK', $action, $callback, $name);
+  }
+
+  public function onUnlock(string $action, callable $callback, ?string $name = null): Service {
+    return $this->onRequest('UNLOCK', $action, $callback, $name);
+  }
+
+  public function onPropfind(string $action, callable $callback, ?string $name = null): Service {
+    return $this->onRequest('PROPFIND', $action, $callback, $name);
+  }
+
+  public function onView(string $action, callable $callback, ?string $name = null): Service {
+    return $this->onRequest('VIEW', $action, $callback, $name);
+  }
+
   /**
    * @param  string      $method   The request method
    * @param  string      $action   The request action
