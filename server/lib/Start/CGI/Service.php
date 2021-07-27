@@ -15,7 +15,8 @@ class Service extends GeneralService {
 
   public function match(string $path): bool {
     $path = trim($path, '/');
-    $pattern = preg_replace_callback('/:([\w]+)/', [$this, 'matchKey'], $this->pattern);
+    $pattern = str_replace('/', '\/', $this->pattern);
+    $pattern = preg_replace_callback('/\:([\w]+)/', [$this, 'matchKey'], $pattern);
     $pattern = "/^$pattern$/i";
 
     if(!preg_match($pattern, $path, $matches))
