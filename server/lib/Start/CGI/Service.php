@@ -11,6 +11,8 @@ class Service extends WebService {
 
   protected array $matches = [];
 
+  protected array $constraints = [];
+
   public function pattern(): string {
     return $this->pattern;
   }
@@ -32,5 +34,10 @@ class Service extends WebService {
 
   public function call(): mixed {
     return ($this->callback)(...$this->matches['arguments']);
+  }
+
+  public function with(string $key, string $pattern): self {
+    $this->constraints[$key] = $pattern;
+    return $this;
   }
 }
