@@ -1,6 +1,6 @@
 <?php namespace Start;
 
-use \Closure, \ReflectionFunction;
+use \Closure, \ReflectionFunction, \ReflectionMethod, \ReflectionException, \ValueError;
 
 abstract class Service {
 
@@ -78,6 +78,7 @@ abstract class Service {
   }
 
   public function call(): mixed {
+    $reflect = $this->callbackReflection();
     return ($this->bindCallback() ?? $this->callback)(...$this->args());
   }
 
@@ -87,14 +88,23 @@ abstract class Service {
   }
 
   protected function bindCallback(): ?Closure {
-    return $this->callbackIsBindable()? $this->callback->bindTo($this, $this::class): null;
+    if($this->callbackIsBindable()) {
+        return $this->callbackReflection() instanceof ReflectionMethod?
+          $this->callback()->bindTo($reflection->getClosureThis(), $reflection->getClosureScopeClass()):
+          $this->callback()->bindTo($this, $this::class);
+    } return null;
   }
 
   protected function callbackIsBindable(): bool {
-    return $this->callbackReflection()->getClosureScopeClass() === null || $this->callbackReflection()->getClosureThis() !== null;
+    return !(is_array($this->callback()) || is_string($this->callback())) && ($this->callbackReflection()->getClosureScopeClass() === null || $this->callbackReflection()->getClosureThis() !== null);
   }
 
-  protected function callbackReflection(): ReflectionFunction {
-    return new ReflectionFunction($this->callback);
+  protected function callbackReflection(): ReflectionFunction|ReflectionMethod {
+    $callback = $this->callback();
+    try {
+      return is_array($callback)? new ReflectionMethod($callback[0], $callback[1]): new ReflectionMethod($callback);
+    } catch(ReflectionException|ValueError $e) {
+      return new ReflectionFunction($callback);
+    }
   }
 }
