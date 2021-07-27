@@ -1,12 +1,10 @@
 <?php namespace Start\CGI;
 
-use \Exception;
+use \Start\Error as GeneralError;
 
-class Error extends Exception {
+class Error extends GeneralError {
 
-  const BAD_METHOD = 0x01;
+  const BAD_METHOD = 0x001;
 
-  const NO_ACTION  = 0x02;
-
-  const NO_SERVICE  = 0x03;
+  const NO_ACTION  = 0x002;
 }
