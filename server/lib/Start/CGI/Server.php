@@ -24,7 +24,7 @@ class Server extends GeneralServer {
     $action = $this->sanitizeAction($action);
 
     if(!isset($name))
-      $name = $action;
+      $name = is_string($callback)? $callback: $action;
 
     return $this->menu[$method][] = $this->services[$name] = new Service($action, $name, $callback);
   }
