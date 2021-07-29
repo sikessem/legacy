@@ -3,6 +3,8 @@
 
   &-view {
     min-height: 100vmin;
+    border-top-left-radius: 75% 25%;
+    border-top-right-radius: 75% 25%;
     background-color: #780078;
     background-image: linear-gradient(#ff0078, #7800ff);
     color: #fff;
