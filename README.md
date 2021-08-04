@@ -5,6 +5,6 @@
 ***
 
 <div align="center">
-  <p>SIGUI Kessé Emmanuel (SIKessEm)<br/>Copyright &#169; 2021</p>
+  <p>SIKessEm  Copyright &#169; 2021  SIGUI Kessé Emmanuel</p>
   <p><a href="https://sikessem.com/" title="Go to SIKessEm website"><img src="SIKessEm-icon.png" width="40px" height="40px" alt="SIKessEm icon" style="border-radius:50%;"/></a></p>
 </div>
