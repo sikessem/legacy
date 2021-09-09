@@ -1,0 +1,8 @@
+# www.robotstxt.org/
+
+User-agent: *
+
+Disallow:
+
+Sitemap: https://sikessem.com/sitemap.xml
+Sitemap: https://omninf.com/sitemap.xml

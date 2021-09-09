@@ -1,0 +1,30 @@
+.main {
+  width: 100%;
+
+  &-view {
+    min-height: 100vmin;
+    border-top-left-radius: 75% 25%;
+    border-top-right-radius: 75% 25%;
+    background-color: #780078;
+    background-image: linear-gradient(#ff0078, #7800ff);
+    color: #fff;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  & .form {
+    width: calc(100% - 20px);
+    margin: 48px auto;
+    max-width: clamp(300px, 60rem, 100vw);
+    background-color: #fff;
+    color: #000;
+    border-radius: 8px;
+    padding: 12px;
+    border: 1px solid #CDCD9A;
+    box-shadow: -2px -2px 8px #9A9A78,
+                4px 4px 16px #9A9A78;
+    overflow: auto;
+    word-wrap: break-word;
+  }
+}
