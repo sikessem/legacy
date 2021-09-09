@@ -8,14 +8,14 @@
         "website"
     ],
     "authors": [{
-        "homepage": "https://sikessem.com",
+        "homepage": "https://SIKessEm",
         "name": "SIGUI kessé Emmanuel",
-        "email": "sikessem@omninf.com",
-        "role": "Developer"
+        "email": "devops@sikessem.com",
+        "role": "DevOps"
     }],
     "support": {
-        "source": "https://github.com/SIKessEm/SIKessEm.com",
-        "issues": "https://github.com/SIKessEm/SIKessEm.com/issues"
+        "source": "https://github.com/SIKessEm/SIKessEm",
+        "issues": "https://github.com/SIKessEm/SIKessEm/issues"
     },
     "require": {
         "php": ">=8.0"
@@ -25,8 +25,10 @@
           "": "server/lib"
         }
     },
-    "homepage": "https://github.com/SIKessEm/SIKessEm.com#readme",
+    "homepage": "https://github.com/SIKessEm/SIKessEm#readme",
     "config": {
+        "vendor-dir": "pkg",
+        "bin-dir": "cli",
         "preferred-install": "dist",
         "sort-packages": true
     },
