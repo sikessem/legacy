@@ -8,7 +8,7 @@ define('SERVER_DIR', ROOT_DIR . 'server' . DIRECTORY_SEPARATOR);
 
 define('VALUE_PATTERN', '/\<\?\s*(.+?)\s*\?\>/');
 
-require_once ROOT_DIR . 'vendor/autoload.php';
+require_once ROOT_DIR . 'pkg/autoload.php';
 
 /**
  * Get the path of a source file
