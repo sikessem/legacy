@@ -4,7 +4,7 @@
 
 Options +FollowSymLinks
 RewriteEngine On
-RewriteBase /client/
+RewriteBase /cgi/
 
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
