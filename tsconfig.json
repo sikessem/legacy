@@ -1,4 +1,5 @@
 {
+  "watch": true,
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
 
@@ -14,11 +15,11 @@
     // "declarationMap": true,                      /* Generates a sourcemap for each corresponding '.d.ts' file. */
     // "sourceMap": true,                           /* Generates corresponding '.map' file. */
     // "outFile": "./",                             /* Concatenate and emit output to single file. */
-    "outDir": "./client/",                              /* Redirect output structure to the directory. */
-    "rootDir": "./server/src/gui/actions/",                             /* Specify the root directory of input files. Use to control the output directory structure with --outDir. */
+    "outDir": "./client/",                          /* Redirect output structure to the directory. */
+    "rootDir": "./server/res/script/",             /* Specify the root directory of input files. Use to control the output directory structure with --outDir. */
     // "composite": true,                           /* Enable project compilation */
     // "tsBuildInfoFile": "./",                     /* Specify file to store incremental compilation information */
-    "removeComments": true,                      /* Do not emit comments to output. */
+    "removeComments": true,                         /* Do not emit comments to output. */
     // "noEmit": true,                              /* Do not emit outputs. */
     // "importHelpers": true,                       /* Import emit helpers from 'tslib'. */
     // "downlevelIteration": true,                  /* Provide full support for iterables in 'for-of', spread, and destructuring when targeting 'ES5' or 'ES3'. */

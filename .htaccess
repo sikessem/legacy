@@ -16,4 +16,4 @@ Header always set Content-Security-Policy "upgrade-insecure-requests;"
 RewriteCond %{HTTP_HOST} ^www.((?:[^.]+.)+[^.]+)$
 RewriteRule .* https://%1 [L,R=301]
 
-RewriteRule (.*) /cgi/$1 [L]
+RewriteRule (.*) /client/$1 [L]

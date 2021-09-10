@@ -22,13 +22,12 @@
     },
     "autoload": {
         "psr-4": {
-          "": "server/lib"
+            "SIKessEm\\": "server/pkg",
+            "": "server/lib"
         }
     },
     "homepage": "https://github.com/SIKessEm/SIKessEm#readme",
     "config": {
-        "vendor-dir": "pkg",
-        "bin-dir": "cli",
         "preferred-install": "dist",
         "sort-packages": true
     },
