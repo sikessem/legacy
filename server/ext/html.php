@@ -13,10 +13,7 @@ if (!function_exists(__NAMESPACE__ . '\\className')) {
 }
 
 if (!function_exists(__NAMESPACE__ . '\\attributes')) {
-  function attributes(array $list): string {
-    $string = '';
-    foreach($list as $name => $value)
-      $string .= ' ' . attribute($name, $value);
-    return trim($string, ' ');
+  function attributes(array $list): AttributesList_Interface {
+    return new Final_AttributesList($list);
   }
 }
