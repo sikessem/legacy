@@ -7,8 +7,8 @@ if (!function_exists(__NAMESPACE__ . '\\attribute')) {
 }
 
 if (!function_exists(__NAMESPACE__ . '\\className')) {
-  function className(string $value): Attribute_Interface {
-    return attribute('class', $value);
+  function className(string $value): ClassName_Interface {
+    return new Final_ClassName($value);
   }
 }
 

@@ -1,7 +1,7 @@
 <?php
 namespace SIKessEm\Net\Web\HTML;
 
-interface Attribute_Interface {
+interface Attribute_Interface extends Component_Interface {
 
   public function setName(string $name): static;
 
@@ -10,6 +10,4 @@ interface Attribute_Interface {
   public function setValue(string $value): static;
 
   public function getValue(): string;
-
-  public function __toString(): string;
 }
