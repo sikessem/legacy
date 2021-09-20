@@ -5,13 +5,20 @@ trait Attribute_Trait {
 
   protected string $name;
 
-  public function setName(string $name): static {
+  protected function setName(string $name): static {
+    $name = Filter::sanitize($name);
+    if (!Filter::validate($name))
+      throw new Error("Invalid attribute name give", Error::INVALID_NAME);
     $this->name = $name;
     return $this;
   }
 
   public function getName(): string {
     return $this->name;
+  }
+
+  public function is(string $name): bool {
+	return $this->name === Filter::sanitize($name);
   }
 
   protected string $value;
