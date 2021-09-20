@@ -24,7 +24,10 @@
         "psr-4": {
             "SIKessEm\\": "server/pkg",
             "": "server/lib"
-        }
+        },
+        "files": [
+            "server/ext/html.php"
+        ]
     },
     "homepage": "https://github.com/SIKessEm/SIKessEm#readme",
     "config": {
