@@ -2,6 +2,7 @@
 namespace SIKessEm\Net\Web\HTML;
 
 trait AttributesList_Trait {
+  use Component_Trait;
 
   protected array $attributes;
 
@@ -43,7 +44,7 @@ trait AttributesList_Trait {
     return false;
   }
 
-  public function __toString(): string {
+  public function render(): string {
     $string = '';
     foreach($this->attributes as $attribute)
       $string .= ' ' . $attribute;

@@ -1,7 +1,7 @@
 <?php
 namespace SIKessEm\Net\Web\HTML;
 
-interface Component_Interface {
+interface Component_Interface extends \Stringable {
 
-  public function __toString(): string;
+  public function render(): string;
 }
