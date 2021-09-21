@@ -11,8 +11,8 @@ return element('footer', className('footer'), [
     )
   ),
   element('nav', className('items'), [
-    element('dl', className('list box'),
-      element('div', className('column'),
+    element('dl', className('list box'), [
+      element('div', className('column'), [
         element('dt', content: [
           'About Me',
           element('span', className('underline'))
@@ -21,6 +21,7 @@ return element('footer', className('footer'), [
           element('p', content: "$author_fullname is a self-taught developer of websites, smartphone apps and cross-plateform software."),
           element('p', content: element('a', ['href' => 'about'], "All about $author_shortname"))
         ])
+      ]
       ),
       element('div', className('column'), [
         element('dt', content: [
@@ -51,12 +52,12 @@ return element('footer', className('footer'), [
           element('form', ['action' => 'contact', 'method' => 'POST'], [
             element('input', [className('entry'), 'type' => 'email', 'name' => 'address', 'placeholder' => 'Type your address', 'required' => 'required']),
             element('input', [className('entry'), 'type' => 'text', 'name' => 'subject', 'placeholder' => 'Type your subject', 'required' => 'required']),
-            element('textarea', [className('entry'), 'name' => 'compose', 'placeholder' => 'Compose email&hellip;', 'required' => 'required']),
+            element('textarea', [className('entry'), 'name' => 'compose', 'placeholder' => 'Compose email&hellip;', 'required' => 'required'], ''),
             element('button', [className('button'), 'name' => 'send', 'type' => 'button', 'value' => 'ok'], 'Send mail'),
           ])
         ])
       ])
-    )
+    ])
   ]),
   element('p', className('copyright content centered'), [
     element('a', [className('link'), 'title' => 'Copyright', 'href' => 'copyright'], $app_name . ' &copy; ' . (date('Y') > 2021 ? 2021 . ' - ' . date('Y') : 2021)),
