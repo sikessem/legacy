@@ -1,13 +1,12 @@
 <?php
 use function SIKessEm\Net\Web\HTML\{
   element,
-  attribute,
   className
 };
 
 return element('footer', className('footer'), [
   element('p', className('content centered'),
-    element('a', attribute('href', 'home'),
+    element('a', ['href' => 'home'],
       element('img', ['src' => 'icon.png', 'alt' => 'icon', 'width' => '48px', 'height' => '48px', 'style' => 'padding:4px;border-radius:50%;object-fit:cover;']),
     )
   ),
@@ -20,7 +19,7 @@ return element('footer', className('footer'), [
         ]),
         element('dd', className('about'), [
           element('p', content: "$author_fullname is a self-taught developer of websites, smartphone apps and cross-plateform software."),
-          element('p', content: element('a', attribute('href', 'about'), "All about $author_shortname"))
+          element('p', content: element('a', ['href' => 'about'], "All about $author_shortname"))
         ])
       ),
       element('div', className('column'), [
