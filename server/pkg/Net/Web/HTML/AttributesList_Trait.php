@@ -29,6 +29,10 @@ trait AttributesList_Trait {
   public function getAttributes(): array {
     return $this->attributes;
   }
+
+  public function hasAttributes(): bool {
+    return !empty($this->attributes);
+  }
   
   public function getAttribute(string $name): ?Attribute_Interface {
     foreach ($this->attributes as $attribute)
