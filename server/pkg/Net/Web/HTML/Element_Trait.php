@@ -22,8 +22,15 @@ trait Element_Trait {
 
     public function setElements(array $elements): static {
         $this->content = '';
-        foreach($elements as $element)
-            is_string($element) ? $this->addText($element) : $this->addElement($element);
+        foreach ($elements as $element)
+            if (is_array($element)) $this->addElements($element);
+            else is_string($element) ? $this->addText($element) : $this->addElement($element);
+        return $this;
+    }
+
+    public function addElements(array $elements): static {
+        foreach ($elements as $element)
+            $this->addElement($element);
         return $this;
     }
 

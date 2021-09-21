@@ -23,3 +23,12 @@ if (!function_exists(__NAMESPACE__ . '\\element')) {
     return new Final_Element($name, $attributes, $content);
   }
 }
+
+if (!function_exists(__NAMESPACE__ . '\\elements')) {
+  function elements(string $name, array $attributes = [], array $contents = []): array {
+    $elements = [];
+    foreach($attributes as $key => $attribute)
+      $elements[] = element($name, $attribute, $contents[$key] ?? null);
+    return $elements;
+  }
+}
