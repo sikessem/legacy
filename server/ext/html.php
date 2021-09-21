@@ -17,3 +17,9 @@ if (!function_exists(__NAMESPACE__ . '\\attributes')) {
     return new Final_AttributesList($list);
   }
 }
+
+if (!function_exists(__NAMESPACE__ . '\\element')) {
+  function element(string $name, array $attributes = [], ?string $content = null): Element_Interface {
+    return new Final_Element($name, $attributes, $content);
+  }
+}
