@@ -2,7 +2,7 @@
 namespace SIKessEm\Net\Web\HTML;
 
 trait Attribute_Trait {
-  use Name_Trait;
+  use Component_Trait, Name_Trait;
 
   protected string $value;
 
@@ -15,7 +15,7 @@ trait Attribute_Trait {
     return $this->value;
   }
 
-  public function __toString(): string {
+  public function render(): string {
     $name = $this->getName();
     $value = $this->getValue();
 
