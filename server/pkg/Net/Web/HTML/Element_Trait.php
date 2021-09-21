@@ -4,10 +4,44 @@ namespace SIKessEm\Net\Web\HTML;
 trait Element_Trait {
     use Name_Trait, AttributesList_Trait;
 
-    protected ?string $content;
+    protected ?string $content = null;
 
-    public function setContent(?string $content): static {
+    public function setContent(null|string|Element_Interface|array $content): static {
+        if(is_array($content))
+            return $this->setElements($content);
+        
+        if(is_object($content))
+            return $this->setElement($content);
+        
+        if(is_string($content))
+            return $this->setText($content);
+
         $this->content = $content;
+        return $this;
+    }
+
+    public function setElements(array $elements): static {
+        $this->content = '';
+        foreach($elements as $element)
+            is_string($element) ? $this->addText($element) : $this->addElement($element);
+        return $this;
+    }
+
+    public function setElement(Element_Interface $element): static {
+        return $this->setText((string) $element);
+    }
+
+    public function addElement(Element_Interface $element): static {
+        return $this->addText((string) $element);
+    }
+
+    public function setText(string $text): static {
+        $this->content = $text;
+        return $this;
+    }
+
+    public function addText(string $text): static {
+        $this->content .= $text;
         return $this;
     }
 
