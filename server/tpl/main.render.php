@@ -1,35 +1,38 @@
 <?php
 use function SIKessEm\Net\Web\HTML\{
-  attributes,
+  element,
   attribute,
   className
 };
-?>
-<!DOCTYPE html>
-<html <?= attributes(['lang' => 'en', 'id' => 'ske', 'class' => 'no-js doc']) ?>>
-  <head>
-    <meta <?= attribute('charset', 'UTF-8') ?>/>
-    <base <?= attribute('href', '/') ?>/>
-    <meta <?= attributes(['name' => 'viewport', 'content' => 'width=device-width,initial-scale=1.0']) ?>/>
-    <meta <?= attributes(['http-equiv' => 'X-UA-Compatible', 'content' => 'ie=edge']) ?>/>
-    <title><?= $doc_title ?></title>
-    <meta <?= attributes(['name' => 'description', 'content' => $doc_description]) ?>/>
-    <link <?= attributes(['rel' => 'fluid-icon', 'href' => 'icon.png', 'title' => $app_name]) ?>/>
-    <link <?= attributes(['rel' => 'mask-icon', 'href' => 'logo.svg']) ?>/>
-    <link <?= attributes(['rel' => 'alternate icon', 'type' => 'image/png', 'href' => 'favicon.png']) ?>/>
-    <link <?= attributes(['rel' => 'shortcut icon', 'type' => 'image/png', 'href' => 'favicon.png']) ?>/>
-    <link <?= attributes(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => 'favicon.ico']) ?>/>
-    <link <?= attributes(['rel' => 'stylesheet', 'type' => 'text/css', 'href' => 'boot.css']) ?>/>
-  </head>
-  <body <?= attributes(['class' => 'view', 'onLoad' => 'main();']) ?>>
-    <noscript>Javascript is required at <?= $app_name ?>. Please activate it to continue.</noscript>
-    <div <?= attribute('id', 'MainWrapper')?>>
-      <div <?= className('main content centered') ?>>
-        <div <?= className('main-header') ?>><?php require 'main.header.php' ?></div>
-        <div <?= className('main-view box centered') ?>><?= $view ?></div>
-        <div <?= className('main-footer') ?>><?php require 'main.footer.php' ?></div>
-      </div>
-    </div>
-    <script <?= attributes(['type' => 'application/javascript', 'src' => 'boot.js', 'language' => 'javascript']) ?>></script>
-  </body>
-</html>
+
+echo '<!DOCTYPE html>' .
+element('html', ['lang' => 'en', 'id' => 'ske', className('no-js doc')], [
+  element('head',
+    content: [
+      element('meta', attribute('charset', 'UTF-8')),
+      element('base', attribute('href', '/')),
+      element('meta', ['http-equiv' => 'X-UA-Compatible', 'content' => 'ie=edge']),
+      element('meta', ['name' => 'viewport', 'content' => 'width=device-width,initial-scale=1.0']),
+      element('title', content: $doc_title),
+      element('meta', ['name' => 'description', 'content' => $doc_description]),
+      element('link', ['rel' => 'fluid-icon', 'href' => 'icon.png', 'title' => $app_name]),
+      element('link', ['rel' => 'mask-icon', 'href' => 'logo.svg']),
+      element('link', ['rel' => 'alternate icon', 'type' => 'image/png', 'href' => 'favicon.png']),
+      element('link', ['rel' => 'shortcut icon', 'type' => 'image/png', 'href' => 'favicon.png']),
+      element('link', ['rel' => 'icon', 'type' => 'image/x-icon', 'href' => 'favicon.ico']),
+      element('link', ['rel' => 'stylesheet', 'type' => 'text/css', 'href' => 'boot.css']),
+    ]
+  ),
+  element('body', [className('view'), 'onLoad' => 'main();'],
+  content: [
+    element('noscript', content: "Javascript is required at $app_name. Please activate it to continue."),
+    element('div', attribute('id', 'MainWrapper'),
+      element('div', className('main content centered'), [
+        element('div', className('main-header'), require 'main.header.php'),
+        element('div', className('main-view box centered'), $view),
+        element('div', className('main-footer'), require 'main.footer.php'),
+      ])
+    ),
+    element('script', ['type' => 'application/javascript', 'src' => 'boot.js', 'language' => 'javascript']),
+  ])
+]);
