@@ -19,7 +19,7 @@ if (!function_exists(__NAMESPACE__ . '\\attributes')) {
 }
 
 if (!function_exists(__NAMESPACE__ . '\\element')) {
-  function element(string $name, array $attributes = [], ?string $content = null): Element_Interface {
+  function element(string $name, array|Attribute_Interface $attributes = [], ?string $content = null): Element_Interface {
     return new Final_Element($name, $attributes, $content);
   }
 }

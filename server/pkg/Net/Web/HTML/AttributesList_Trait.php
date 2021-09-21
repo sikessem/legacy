@@ -6,15 +6,18 @@ trait AttributesList_Trait {
 
   protected array $attributes;
 
-  public function setAttributes(array $list): static {
+  public function setAttributes(array|Attribute_Interface $attributes): static {
     $this->attributes = [];
-    $this->addAttributes($list);
+    if(is_array($attributes))
+      $this->addAttributes($attributes);
+    else
+      $this->addAttribute($attributes);
     return $this;
   }
 
-  public function addAttributes(array $list): static {
-    foreach ($list as $name => $value)
-      $this->setAttribute($name, $value);
+  public function addAttributes(array $attributes): static {
+    foreach ($attributes as $name => $value)
+      is_object($value) ? $this->addAttribute($value) : $this->setAttribute($name, $value);
     return $this;
   }
   
@@ -22,8 +25,12 @@ trait AttributesList_Trait {
     if ($attribute = $this->getAttribute($name))
       $attribute->setValue($value);
     else
-      $attribute = $this->attributes[] = new Attribute($name, $value);
+      $attribute = $this->addAttribute(new Attribute($name, $value));
     return $attribute;
+  }
+
+  public function addAttribute(Attribute_Interface $attribute): Attribute_Interface {
+    return $this->attributes[] = $attribute;
   }
   
   public function getAttributes(): array {
