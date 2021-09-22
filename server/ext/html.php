@@ -30,6 +30,12 @@ if (!function_exists(__NAMESPACE__ . '\\document')) {
   }
 }
 
+if (!function_exists(__NAMESPACE__ . '\\text')) {
+  function text(string $value): Text_Interface {
+    return new Final_Text($value);
+  }
+}
+
 if (!function_exists(__NAMESPACE__ . '\\create')) {
   /**
    * Create many elements in an array
