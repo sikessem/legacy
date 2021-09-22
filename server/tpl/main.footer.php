@@ -1,6 +1,7 @@
 <?php
 use function SIKessEm\Net\Web\HTML\{
   element,
+  create,
   className
 };
 
@@ -18,8 +19,10 @@ return element('footer', className('footer'), [
           element('span', className('underline'))
         ]),
         element('dd', className('about'), [
-          element('p', content: "$author_fullname is a self-taught developer of websites, smartphone apps and cross-plateform software."),
-          element('p', content: element('a', ['href' => 'about'], "All about $author_shortname"))
+          create(2, 'p', contents: [
+            "$author_fullname is a self-taught developer of websites, smartphone apps and cross-plateform software.",
+            element('a', ['href' => 'about'], "All about $author_shortname")
+          ]),
         ])
       ]
       ),
@@ -30,16 +33,36 @@ return element('footer', className('footer'), [
         ]),
         element('dd', content: [
           element('ul', className('list'), [
-            element('li', className('item'), element('a', ['class' => 'link', 'href' => $author_github], 'Github')),
-            element('li', className('item'), element('a', ['class' => 'link', 'href' => $author_packagist], 'Packagist')),
-            element('li', className('item'), element('a', ['class' => 'link', 'href' => $author_npmjs], 'NPM')),
-            element('li', className('item'), element('a', ['class' => 'link', 'href' => $author_linkedin], 'LinkedIn')),
-            element('li', className('item'), element('a', ['class' => 'link', 'href' => $author_twitter], 'Twitter')),
-            element('li', className('item'), element('a', ['class' => 'link', 'href' => $author_whatsapp], 'WhatsApp')),
-            element('li', className('item'), element('a', ['class' => 'link', 'href' => $author_youtube], 'Youtube')),
-            element('li', className('item'), element('a', ['class' => 'link', 'href' => $author_facebook], 'Facebook')),
-            element('li', className('item'), element('a', ['class' => 'link', 'href' => $author_instagram], 'Instagram')),
-            element('li', className('item'), element('a', ['class' => 'link', 'href' => $author_pinterest], 'Pinterest')),
+            create(10, 'li',
+              with: className('item'),
+              contents: create(10, 'a', 
+                with: className('link'),
+                attributes: [
+                  'href' => $author_github,
+                  'href' => $author_packagist,
+                  'href' => $author_npmjs,
+                  'href' => $author_linkedin,
+                  'href' => $author_twitter,
+                  'href' => $author_whatsapp,
+                  'href' => $author_youtube,
+                  'href' => $author_facebook,
+                  'href' => $author_instagram,
+                  'href' => $author_pinterest,
+                ],
+                contents: [
+                  'Github',
+                  'Packagist',
+                  'NPM',
+                  'LinkedIn',
+                  'Twitter',
+                  'WhatsApp',
+                  'Youtube',
+                  'Facebook',
+                  'Instagram',
+                  'Pinterest',
+                ]
+              )
+            ),
           ])
         ])
       ]),
