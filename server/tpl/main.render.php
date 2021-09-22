@@ -1,12 +1,13 @@
 <?php
 use function SIKessEm\Net\Web\HTML\{
   element,
+  document,
   create,
   className
 };
 
-echo '<!DOCTYPE html>' .
-element('html', ['lang' => 'en', 'id' => 'ske', className('no-js doc')], [
+$doc = document();
+$doc->getRoot()->setAttributes(['lang' => 'en', 'id' => 'ske', className('no-js doc')])->setContent([
   element('head',
     content: [
       create(4, 'meta', [
@@ -46,3 +47,4 @@ element('html', ['lang' => 'en', 'id' => 'ske', className('no-js doc')], [
     element('script', ['type' => 'application/javascript', 'src' => 'boot.js', 'language' => 'javascript'], ''),
   ])
 ]);
+echo $doc;
