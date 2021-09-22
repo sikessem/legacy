@@ -2,7 +2,7 @@
 namespace SIKessEm\Net\Web\HTML;
 
 trait Element_Trait {
-    use Name_Trait, AttributesList_Trait;
+    use Name_Trait, Attributes_Trait;
 
     protected ?string $content = null;
 

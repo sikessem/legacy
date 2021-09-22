@@ -13,8 +13,8 @@ if (!function_exists(__NAMESPACE__ . '\\className')) {
 }
 
 if (!function_exists(__NAMESPACE__ . '\\attributes')) {
-  function attributes(array $list): AttributesList_Interface {
-    return new Final_AttributesList($list);
+  function attributes(array $list): Attributes_Interface {
+    return new Final_Attributes($list);
   }
 }
 

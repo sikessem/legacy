@@ -1,7 +1,7 @@
 <?php
 namespace SIKessEm\Net\Web\HTML;
 
-abstract class Abstract_AttributesList implements AttributesList_Interface {
+abstract class Abstract_Attributes implements Attributes_Interface {
 
   public function __construct(array $list) {
 

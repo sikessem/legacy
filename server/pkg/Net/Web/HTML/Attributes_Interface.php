@@ -1,7 +1,7 @@
 <?php
 namespace SIKessEm\Net\Web\HTML;
 
-interface AttributesList_Interface extends Component_Interface {
+interface Attributes_Interface extends Component_Interface {
   public function setAttributes(array|Attribute_Interface $attributes): static;
   public function addAttributes(array $attributes): static;
   public function addAttribute(Attribute_Interface $attribute): Attribute_Interface;

@@ -1,7 +1,7 @@
 <?php
 namespace SIKessEm\Net\Web\HTML;
 
-trait AttributesList_Trait {
+trait Attributes_Trait {
   use Component_Trait;
 
   protected array $attributes;
