@@ -24,6 +24,12 @@ if (!function_exists(__NAMESPACE__ . '\\element')) {
   }
 }
 
+if (!function_exists(__NAMESPACE__ . '\\document')) {
+  function document(string $type = 'html'): Document_Interface {
+    return new Final_Document($type);
+  }
+}
+
 if (!function_exists(__NAMESPACE__ . '\\create')) {
   /**
    * Create many elements in an array
