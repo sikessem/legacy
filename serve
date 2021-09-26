@@ -1,7 +1,9 @@
 <?php
 if (PHP_SAPI === 'cli') {
-  exec(PHP_BINARY . ' -S ' . ($argv[1] ?? 'localhost:80') . ' ' . __FILE__);
-  exit;
+  $address = $argv[1] ?? '0.0.0.0:80';
+  $handle = popen(PHP_BINARY . " -S $address " . __FILE__ . ' 2>&1', 'r');
+  while(($output = fgets($handle)) !== feof($handle)) fwrite(STDOUT, $output);
+  pclose($handle);
 } else {
   $path = urldecode(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
   if ($path !== '/' && file_exists(__DIR__ . '/client' . $path)) return false;
