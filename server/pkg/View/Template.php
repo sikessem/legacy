@@ -7,10 +7,7 @@ class Template {
         $this->dir = $dir;
     }
 
-    public function render(string $name, array $vars = [], ?callable $callback = null): string {
-        extract($vars);
-        ob_start($callback);
-        require "$this->dir/$name.php";
-        return ob_get_clean();
+    public function render(string $name, array $vars = [], ?callable $call = null): Render {
+        return new Render($this->dir . DIRECTORY_SEPARATOR . $name . '.php', $vars, $call);
     }
 }
