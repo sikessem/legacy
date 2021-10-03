@@ -1,0 +1,30 @@
+<?php
+if (PHP_SAPI === 'cli') {
+  $address = $argv[1] ?? '0.0.0.0:80';
+  $handle = popen(PHP_BINARY . " -S $address " . __FILE__ . ' 2>&1', 'r');
+  while (($output = fgets($handle)) !== feof($handle)) {
+    $error = '';
+    if (preg_match('/^\[(.*?)\](.+)$/', $output, $matches)) {
+      $output = ltrim($matches[2]);
+      $date = $matches[1];
+      if (preg_match('/^(.+)\(reason:\s+(.*?)\)$/', $output, $matches))
+        $error = rtrim($matches[1]) . PHP_EOL . 'Reason: ' . $matches[2] . PHP_EOL;
+      else
+        $output .= ' on ' . $date . PHP_EOL;
+    }
+    else $error = $output;
+
+    if ($error) {
+      fwrite(STDERR, $error);
+      break;
+    }
+    else fwrite(STDOUT, $output);
+  }
+
+  pclose($handle);
+  if (!empty($error)) exit(1);
+} else {
+  $path = urldecode(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
+  if ($path !== '/' && file_exists(__DIR__ . '/client' . $path)) return false;
+  require_once __DIR__ . '/client/index.php';
+}
