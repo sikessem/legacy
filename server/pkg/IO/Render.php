@@ -1,10 +1,8 @@
 <?php
 
-namespace SIKessEm\View;
+namespace SIKessEm\IO;
 
-use SIKessEm\OO\Is_Stringable;
-
-class Render implements Is_Stringable {
+class Render implements \Stringable {
     public function __construct(string $file, array $vars = [], ?callable $call = null) {
         if (!is_file($file))
             throw new Error("No such ", Error::NO_FILE);

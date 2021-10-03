@@ -1,6 +1,6 @@
 <?php
 
-namespace SIKessEm\View;
+namespace SIKessEm\IO;
 
 class Template {
     public function __construct(string $dir) {
