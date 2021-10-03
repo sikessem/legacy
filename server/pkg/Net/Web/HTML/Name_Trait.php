@@ -7,7 +7,7 @@ trait Name_Trait {
     protected function setName(string $name): static {
         $name = Filter::sanitize($name);
         if (!Filter::validate($name))
-            throw new Error("Invalid attribute name give", Error::INVALID_NAME);
+            throw new Error("Invalid attribute name $name give", Error::INVALID_NAME);
         $this->name = $name;
         return $this;
     }

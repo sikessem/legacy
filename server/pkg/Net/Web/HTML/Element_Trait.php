@@ -2,7 +2,7 @@
 namespace SIKessEm\Net\Web\HTML;
 
 trait Element_Trait {
-    use Name_Trait, Attributes_Trait;
+    use Component_Trait, Name_Trait;
 
     protected ?string $content = null;
 
@@ -58,6 +58,21 @@ trait Element_Trait {
 
     public function hasContent(): bool {
         return isset($this->content);
+    }
+
+    protected ?Attributes_Interface $attributes = null;
+
+    public function setAttributes(array|Attributes_Interface|Attribute_Interface $attributes): static {
+        isset($this->attributes) ? $this->attributes->set($attributes) : ($this->attributes = new Final_Attributes($attributes));
+        return $this;
+    }
+
+    public function getAttributes(null|array|Attributes_Interface $attributes = null): null|array|Attributes_Interface {
+        return isset($attributes) ? $this?->attributes->get($attributes) : $this->attributes;
+    }
+
+    public function hasAttributes(null|array|Attributes_Interface $attributes = null): bool {
+        return (bool) isset($attributes) ? $this?->attributes->isset($attributes) : ((int) $this?->attributes->count()) > 0;
     }
 
     public function render(): string {
