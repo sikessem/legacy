@@ -1,5 +1,7 @@
 <?php
 
+use SIKessEm\Debugger\{ErrorHandler, ExceptionHandler};
+
 use SIKessEm\Net\Web\HTTP\{
   Client,
   Request,
@@ -8,6 +10,10 @@ use SIKessEm\Net\Web\HTTP\{
 };
 
 require_once __DIR__ . '/vendor/autoload.php';
+
+error_reporting(-1);
+set_error_handler(new ErrorHandler);
+set_exception_handler(new ExceptionHandler);
 
 function main(): void {
 
