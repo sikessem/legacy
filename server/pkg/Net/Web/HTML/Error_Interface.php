@@ -1,4 +1,6 @@
 <?php
 namespace SIKessEm\Net\Web\HTML;
 
-interface Error_Interface extends \Throwable {}
+use SIKessEm\Error\Throwable;
+
+interface Error_Interface extends Throwable {}
