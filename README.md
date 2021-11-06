@@ -15,7 +15,7 @@ He is not very active on social networks but you can [contact him](https://sikes
 
 ## Useful links
 
-SIGUI Kessé Emmanuel ([https://sikessem.com/](https://sikessem.com/)) <[devops@sikessem.com](mailto:devops@sikessem.com)> | [GitLab](https://gitlab.com/SIKessEm) | [GitHub](https://github.com/SIKessEm) | [npm](https://npmjs.org/~sikessem) | [Composer - Packagist](https://packagist.org/users/SIKessEm/) | [Twitter](https://twitter.com/SIKessEm_tweets)
+SIGUI Kessé Emmanuel ([SIKessEm](https://sikessem.com)) <[devops@sikessem.com](mailto:devops@sikessem.com)> | [GitLab](https://gitlab.com/SIKessEm) | [GitHub](https://github.com/SIKessEm) | [npm](https://npmjs.org/~sikessem) | [Composer - Packagist](https://packagist.org/users/SIKessEm) | [Twitter](https://twitter.com/SIKessEm_tweets)
 
 
 ## Security Reports
