@@ -7,7 +7,7 @@
 ## About SIKessEm
 
 SIKessEm (real name SIGUI Kessé Emmanuel) is a web developer who enjoys discovering things on his own and learning and developing new solutions that advance technology.
-Its free and open-source softwares are available at [https://foss.sikessem.com](Skefoss).
+Its free and open-source softwares are available at [Skefoss](https://foss.sikessem.com).
 
 He is not very active on social networks but you can [contact him](https://sikessem.com/contact) or [follow him](https://sikessem.com/follow) from [his website](https://sikessem.com).
 
@@ -15,7 +15,7 @@ He is not very active on social networks but you can [contact him](https://sikes
 
 ## Useful links
 
-SIGUI Kessé Emmanuel ([https://sikessem.com/](https://sikessem.com/)) <[devops@sikessem.com](mailto:devops@sikessem.com)> | [GitLab](https://gitlab.com/SIKessEm) | [GitHub](https://github.com/SIKessEm) | [npm](https://npmjs.org/~sikessem) | [Composer - Packagist](https://packagist.org/packages/sikessem/) | [Twitter](https://twitter.com/SIKessEm_tweets)
+SIGUI Kessé Emmanuel ([https://sikessem.com/](https://sikessem.com/)) <[devops@sikessem.com](mailto:devops@sikessem.com)> | [GitLab](https://gitlab.com/SIKessEm) | [GitHub](https://github.com/SIKessEm) | [npm](https://npmjs.org/~sikessem) | [Composer - Packagist](https://packagist.org/users/SIKessEm/) | [Twitter](https://twitter.com/SIKessEm_tweets)
 
 
 ## Security Reports
