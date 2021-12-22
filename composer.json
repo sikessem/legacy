@@ -1,17 +1,16 @@
 {
-    "name": "sikessem/website",
+    "name": "ske/sikessem",
     "type": "project",
-    "description": "The official SIKessEm website",
+    "description": "The SIKessEm special repository package",
     "license": "GPL-3.0-only",
     "keywords": [
-        "sikessem",
-        "website"
+        "special-repository"
     ],
     "authors": [{
         "homepage": "https://SIKessEm",
-        "name": "SIGUI kessé Emmanuel",
-        "email": "devops@sikessem.com",
-        "role": "DevOps"
+        "name": "SIGUI Kessé Emmanuel",
+        "email": "developer@sikessem.com",
+        "role": "Developer"
     }],
     "support": {
         "source": "https://github.com/SIKessEm/SIKessEm",
