@@ -1,3 +1,5 @@
-/vendor/*
-/.idea
+/vendor/
 *.ignore/
+/package-lock.json
+/composer.json
+/node-modules/

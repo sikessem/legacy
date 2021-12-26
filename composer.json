@@ -1,13 +1,13 @@
 {
-    "name": "ske/sikessem",
-    "type": "project",
+    "name": "sikessem/sikessem",
+    "version": "0.0.0",
     "description": "The SIKessEm special repository package",
-    "license": "GPL-3.0-only",
     "keywords": [
-        "special-repository"
+        "special-repository",
+        "special-package"
     ],
     "authors": [{
-        "homepage": "https://SIKessEm",
+        "homepage": "",
         "name": "SIGUI Kessé Emmanuel",
         "email": "developer@sikessem.com",
         "role": "Developer"
@@ -16,19 +16,7 @@
         "source": "https://github.com/SIKessEm/SIKessEm",
         "issues": "https://github.com/SIKessEm/SIKessEm/issues"
     },
-    "require": {
-        "php": ">=8.0"
-    },
-    "autoload": {
-        "psr-4": {
-            "SIKessEm\\": "server/pkg",
-            "": "server/lib"
-        },
-        "files": [
-            "server/ext/html.php"
-        ]
-    },
-    "homepage": "https://github.com/SIKessEm/SIKessEm#readme",
+    "homepage": "https://sikessem.com",
     "config": {
         "preferred-install": "dist",
         "sort-packages": true

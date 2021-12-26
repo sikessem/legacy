@@ -1,24 +1,18 @@
 {
-    "name": "@~sikessem/website",
-    "version": "1.0.0",
-    "description": "The official SIKessEm website",
-    "main": "client/index.js",
-    "scripts": {
-        "serve": "php serve",
-        "watch": "sass -w ./server/res/static/style/:./client -s compressed --no-source-map"
-    },
+    "name": "sikessem",
+    "version": "0.0.0",
+    "description": "The SIKessEm special repository package",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/SIKessEm/SIKessEm.com.git"
+        "url": "git+https://github.com/SIKessEm/SIKessEm.git"
     },
     "keywords": [
-        "sikessem",
-        "website"
+        "special-repository",
+        "special-package"
     ],
-    "author": "SIGUI Kessé Emmanuel <sikessem@omninf.com> (https://sikessem.com)",
-    "license": "GPL-3.0-only",
+    "author": "SIGUI Kessé Emmanuel <developer@sikessem.com>",
     "bugs": {
-        "url": "https://github.com/SIKessEm/SIKessEm.com/issues"
+        "url": "https://github.com/SIKessEm/SIKessEm/issues"
     },
-    "homepage": "https://github.com/SIKessEm/SIKessEm.com#readme"
+    "homepage": "https://sikessem.com"
 }
