@@ -1,6 +1,6 @@
 <div align="center">
   <h1><a href="https://sikessem.com/" title="SIKessEm"><img src="SIKessEm-logo.png" alt="SIKessEm logo"/></a></h1>
-  <p><a href="https://sikessem.com/" target="_blank" title="The SIKessEm Free and Open-Source Software"><img align="center" src="https://github-readme-stats.vercel.app/api?username=sikessem&count_private=true&show_icons=true&include_all_commits=true&theme=tokyonight"/></a> <a href="https://sikessem.com/" target="_blank" title="The SIKessEm Free and Open-Source Software"><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=sikessem&layout=compact&theme=tokyonight"/></a></p>
+  <p><a href="https://github.com/skefoss" target="_blank" title="The SIKessEm Free and Open-Source Software"><img align="center" src="https://github-readme-stats.vercel.app/api?username=sikessem&count_private=true&show_icons=true&include_all_commits=true&theme=tokyonight"/></a> <a href="https://github.com/skefoss" target="_blank" title="The SIKessEm Free and Open-Source Software"><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=sikessem&layout=compact&theme=tokyonight"/></a></p>
 </div>
 
 ***
