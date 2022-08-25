@@ -12,7 +12,7 @@ Its free and open-source softwares are available at [Skefoss](https://github.com
 [Click here to learn more about SIKessEm](https://about.sikessem.com).
 
 ## Useful links
-[Website](https://sikessem.com/) | [E-mail](mailto:developer@sikessem.com) | [LinkedIn](https://linkedin.com/in/sikessem) | [GitLab](https://gitlab.com/sikessem) | [GitHub](https://github.com/sikessem) | [npm](https://npmjs.org/~sikessem) | [Composer - Packagist](https://packagist.org/users/sikessem) | [Twitter](https://twitter.com/About_SIKessEm)
+[Website](https://ske.sikessem.com/) | [E-mail](mailto:ske@sikessem.com) | [LinkedIn](https://linkedin.com/in/sikessem) | [GitLab](https://gitlab.com/sikessem) | [GitHub](https://github.com/sikessem) | [npm](https://npmjs.org/~sikessem) | [Composer - Packagist](https://packagist.org/users/sikessem) | [Twitter](https://twitter.com/ske_sikessem)
 
 ## Security Reports
 Please send any sensitive issue to [report@sikessem.com](mailto:report@sikessem.com). Thanks!
