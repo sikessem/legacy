@@ -4,15 +4,17 @@
     "description": "The SIKessEm special repository package",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/SIKessEm/SIKessEm.git"
+        "url": "git+https://github.com/sikessem/sikessem.git"
     },
     "keywords": [
         "special-repository",
-        "special-package"
+        "special-package",
+        "framework",
+        "website"
     ],
-    "author": "SIGUI Kessé Emmanuel <developer@sikessem.com>",
+    "author": "SIGUI Kessé Emmanuel <ske@sikessem.com>",
     "bugs": {
-        "url": "https://github.com/SIKessEm/SIKessEm/issues"
+        "url": "https://github.com/sikessem/sikessem/issues"
     },
     "homepage": "https://sikessem.com"
 }

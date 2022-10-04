@@ -2,21 +2,46 @@
     "name": "sikessem/sikessem",
     "version": "0.0.0",
     "description": "The SIKessEm special repository package",
-    "keywords": [
-        "special-repository",
-        "special-package"
-    ],
+    "keywords": ["sikessem"],
     "authors": [{
-        "homepage": "",
         "name": "SIGUI Kessé Emmanuel",
-        "email": "developer@sikessem.com",
+        "email": "ske@sikessem.com",
+        "homepage": "https://sikessem.com",
         "role": "Developer"
     }],
-    "support": {
-        "source": "https://github.com/SIKessEm/SIKessEm",
-        "issues": "https://github.com/SIKessEm/SIKessEm/issues"
-    },
     "homepage": "https://sikessem.com",
+    "support": {
+        "docs": "https://sikessem.github.io/sikessem",
+        "source": "https://github.com/sikessem/sikessem",
+        "wiki": "https://github.com/sikessem/sikessem/wiki",
+        "issues": "https://github.com/sikessem/sikessem/issues",
+        "chat": "https://github.com/sikessem/sikessem/discussions"
+    },
+    "funding": [
+        {
+            "type": "other",
+            "url": "https://foss.sikessem.com/fund"
+        }
+    ],
+    "require": {
+        "php": "^8.0.24"
+    },
+    "require-dev": {
+        "php": "^8.1.11"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sikessem\\": "app/src/"
+        },
+        "files": [
+            "app/inc/init.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
     "config": {
         "preferred-install": "dist",
         "sort-packages": true
