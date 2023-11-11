@@ -1,21 +1,21 @@
 {
-    "name": "sikessem/sikessem",
+    "name": "sikessem/sikessem.com",
     "version": "0.0.0",
-    "description": "The SIKessEm special repository package",
+    "description": "The Sikessme Web Application",
     "keywords": ["sikessem"],
     "authors": [{
-        "name": "SIGUI Kessé Emmanuel",
-        "email": "ske@sikessem.com",
-        "homepage": "https://sikessem.com",
+        "name": "Sigui Kessé Emmanuel",
+        "email": "contact@sigui.ci",
+        "homepage": "https://sigui.ci",
         "role": "Developer"
     }],
     "homepage": "https://sikessem.com",
     "support": {
-        "docs": "https://sikessem.github.io/sikessem",
-        "source": "https://github.com/sikessem/sikessem",
-        "wiki": "https://github.com/sikessem/sikessem/wiki",
-        "issues": "https://github.com/sikessem/sikessem/issues",
-        "chat": "https://github.com/sikessem/sikessem/discussions"
+        "docs": "https://sikessem.github.io",
+        "source": "https://github.com/sikessem/sikessem.com",
+        "wiki": "https://github.com/sikessem/sikessem.com/wiki",
+        "issues": "https://github.com/sikessem/sikessem.com/issues",
+        "chat": "https://github.com/orgs/sikessem/discussions"
     },
     "funding": [
         {

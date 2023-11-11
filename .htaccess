@@ -1,7 +1,3 @@
-<IfModule mime_module>
-    AddHandler application/x-httpd-ea-php80___lsphp .php .php8 .phtml
-</IfModule>
-
 <IfModule mod_autoindex.c>
     Options -Indexes
 </IfModule>
@@ -27,6 +23,6 @@
     RewriteCond %{HTTP_HOST} ^www.((?:[^.]+.)+[^.]+)$
     RewriteRule .* https://%1 [L,R=301]
 
-    # Redirect to the public directory
-    RewriteRule (.*) /public/$1 [L]
+    # Redirect to the website directory
+    RewriteRule (.*) /site/$1 [L]
 </IfModule>

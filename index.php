@@ -6,9 +6,9 @@ const APP_HOME = '/';
 const APP_PORT = 80;
 const APP_LANG = 'fr';
 
-const DEV_NAME = 'SIGUI Kessé Emmanuel';
-const DEV_EMAIL = 'developer@sikessem.com';
-const DEV_HOME = 'https://sikessem.com';
+const DEV_NAME = 'Sigui Kessé Emmanuel';
+const DEV_EMAIL = 'contact@sigui.ci';
+const DEV_HOME = 'https://sigui.ci';
 
 function secure(): bool {
 	return isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on';
