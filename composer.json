@@ -1,51 +1,75 @@
 {
-    "name": "sikessem/sikessem.com",
-    "version": "0.0.0",
-    "description": "The Sikessme Web Application",
-    "keywords": ["sikessem"],
-    "authors": [{
-        "name": "Sigui Kessé Emmanuel",
-        "email": "contact@sigui.ci",
-        "homepage": "https://sigui.ci",
-        "role": "Developer"
-    }],
-    "homepage": "https://sikessem.com",
-    "support": {
-        "docs": "https://sikessem.github.io",
-        "source": "https://github.com/sikessem/sikessem.com",
-        "wiki": "https://github.com/sikessem/sikessem.com/wiki",
-        "issues": "https://github.com/sikessem/sikessem.com/issues",
-        "chat": "https://github.com/orgs/sikessem/discussions"
-    },
-    "funding": [
-        {
-            "type": "other",
-            "url": "https://foss.sikessem.com/fund"
-        }
-    ],
-    "require": {
-        "php": "^8.0.24"
-    },
-    "require-dev": {
-        "php": "^8.1.11"
-    },
-    "autoload": {
-        "psr-4": {
-            "Sikessem\\": "app/src/"
-        },
-        "files": [
-            "app/inc/init.php"
-        ]
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Tests\\": "tests/"
-        }
-    },
-    "config": {
-        "preferred-install": "dist",
-        "sort-packages": true
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+  "name": "sikessem/sikessem.com",
+  "description": "The Sikessme Web Application",
+  "keywords": ["sikessem"],
+  "authors": [
+    {
+      "name": "Sigui Kessé Emmanuel",
+      "email": "contact@sigui.ci",
+      "homepage": "https://sigui.ci",
+      "role": "Developer"
+    }
+  ],
+  "homepage": "https://sikessem.com",
+  "support": {
+    "docs": "https://sikessem.github.io",
+    "source": "https://github.com/sikessem/sikessem.com",
+    "wiki": "https://github.com/sikessem/sikessem.com/wiki",
+    "issues": "https://github.com/sikessem/sikessem.com/issues",
+    "chat": "https://github.com/orgs/sikessem/discussions"
+  },
+  "repositories": [
+    {
+      "type": "path",
+      "url": "./packages/*",
+      "options": {
+        "symlink": true
+      }
+    }
+  ],
+  "funding": [
+    {
+      "type": "other",
+      "url": "https://sikessem.com/fund"
+    }
+  ],
+  "require": {
+    "php": "^8.1||^8.2",
+    "sikessem/core": "dev-main",
+    "sikessem/debugger": "^0.0.0"
+  },
+  "require-dev": {
+    "sikessem/devtools": "^0.4.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/app/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "analyse": "phpstan analyse --ansi --memory-limit=-1 --debug",
+    "check": "pint --test -v",
+    "debug": ["@check", "@analyse", "@review", "@test"],
+    "fix": ["@refactor", "@lint"],
+    "lint": "pint -v",
+    "post-create-project-cmd": ["@php artisan key:generate --ansi"],
+    "test": "pest --colors=always",
+    "review": "rector --dry-run --debug",
+    "refactor": "rector"
+  },
+  "config": {
+    "preferred-install": "dist",
+    "sort-packages": true,
+    "allow-plugins": {
+      "pestphp/pest-plugin": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }

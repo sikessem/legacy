@@ -1,0 +1,69 @@
+{
+  "include": [
+    "src/app/**/*",
+  ],
+  "exclude": [
+    "node_modules",
+    "vendor",
+    "out",
+  ],
+  "typeRoots": [
+    "./node_modules/@types",
+  ],
+  "types": [
+    "node",
+  ],
+  "baseUrl": ".",
+  "paths": {
+    "App/*": [
+      "src/app/*",
+    ],
+    "E2E/*": [
+      "e2e/*",
+    ],
+    "Tests/*": [
+      "specs/*",
+    ],
+  },
+  "compilerOptions": {
+    "allowJs": true,
+    "target": "ES2017",
+    "module": "ES2020",
+    "lib": [
+      "es2020",
+      "DOM",
+      "WebWorker",
+      "DOM.Iterable"
+    ],
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "incremental": true,
+    "isolatedModules": true,
+    "outDir": "tmp",
+    "noEmit": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "declaration": true,
+    "declarationMap": true,
+    "noImplicitReturns": true,
+    "pretty": true,
+    "useDefineForClassFields": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": false,
+    "noFallthroughCasesInSwitch": true,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+  },
+  "files": ["biome.json"],
+}
