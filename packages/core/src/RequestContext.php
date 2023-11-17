@@ -4,10 +4,14 @@ declare(strict_types=1);
 
 namespace Sikessem;
 
-class RequestContext
+class RequestContext extends Context
 {
-    public function __construct(protected Request $request, protected Environment $environment)
+    protected Request $request;
+
+    public function __construct(Request $request, Environment $environment)
     {
+        parent::__construct($environment);
+        $this->setRequest($request);
     }
 
     public static function fromGlobals(): self
@@ -22,21 +26,9 @@ class RequestContext
         return $this->request;
     }
 
-    public function getEnvironment(): Environment
-    {
-        return $this->environment;
-    }
-
     public function setRequest(Request $request): self
     {
         $this->request = $request;
-
-        return $this;
-    }
-
-    public function setEnvironment(Environment $environment): self
-    {
-        $this->environment = $environment;
 
         return $this;
     }
