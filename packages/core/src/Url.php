@@ -6,7 +6,7 @@ namespace Sikessem;
 
 class Url implements \Stringable
 {
-    protected ?string $scheme = null;
+    protected ?Scheme $scheme = null;
 
     protected ?string $host = null;
 
@@ -117,8 +117,10 @@ class Url implements \Stringable
         return $value;
     }
 
-    public function setScheme(string $scheme): self
+    public function setScheme(Scheme|string $scheme): self
     {
+        $scheme = $scheme instanceof Scheme ? $scheme : new Scheme($scheme);
+
         $this->scheme = $scheme;
 
         return $this;
@@ -159,9 +161,11 @@ class Url implements \Stringable
         return $this;
     }
 
-    public function setQuery(string $query): self
+    public function setQuery(Query|string $query): self
     {
-        $this->query = new Query($query);
+        $query = $query instanceof Query ? $query : new Query($query);
+
+        $this->query = $query;
 
         return $this;
     }
@@ -173,7 +177,7 @@ class Url implements \Stringable
         return $this;
     }
 
-    public function getScheme(): ?string
+    public function getScheme(): ?Scheme
     {
         return $this->scheme;
     }
