@@ -2,9 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Sikessem;
+namespace Sikessem\Http;
 
-class RequestContext extends Context
+use Sikessem\Context as BaseContext;
+use Sikessem\Environment;
+
+class Context extends BaseContext
 {
     protected Request $request;
     protected Response $response;

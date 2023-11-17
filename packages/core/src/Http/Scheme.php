@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Sikessem;
+namespace Sikessem\Http;
 
 class Scheme implements \Stringable
 {

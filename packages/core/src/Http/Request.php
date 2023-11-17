@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Sikessem;
+namespace Sikessem\Http;
+
+use Sikessem\ReadableStream;
 
 class Request
 {
